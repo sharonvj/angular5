@@ -1,0 +1,31 @@
+  <div class="row"> 
+   <div class="col-12">
+   	<div class="log-panel-container">
+     <div class="col-xs-12 col-sm-12 col-md-5 card shadow-lg  log-pannel align-middle">
+       <div class="card-body">
+		<form name="signinForm" (ngSubmit)="doSignin()" #signinForm="ngForm" autocomplete="off" 
+		 [ngClass]="[submitted ? 'was-validated' : '']">
+			<div class="form-group">
+			<label for="exampleInputEmail1">User Name</label>
+			<input type="text" class="form-control" 
+             [ngClass]="[(username.invalid && username.dirty) ? 'is-invalid' :'']"
+			 name="username" required 
+			 [(ngModel)]="account.username"
+			 #username="ngModel" >
+			<div class="invalid-feedback">That didn't work.</div>
+			<div class="valid-feedback">Success! You've done it.</div>
+			</div>
+			<div class="form-group">
+			<label for="exampleInputPassword1">Password</label>
+			<input type="password" class="form-control" required name="password" [(ngModel)]="account.password" #password="ngModel">
+			<div class="invalid-feedback">That didn't work.</div>
+			<div class="valid-feedback">Success! You've done it.</div>
+			</div>
+			<button type="Submit" class="btn btn-primary" (click)="submitted=true">Submit</button>
+			<a routerLink="/signup">SignUp?</a>
+		</form>
+       </div> 
+     </div>
+    </div>
+   </div>
+  </div>
