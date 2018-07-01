@@ -22,8 +22,8 @@ export class SigninComponent implements OnInit {
   doSignin() {
     this.accountService.doSignin(this.account)
     .subscribe(response => {
-      if(response && response.hits.total)
-         this.router.navigate(['./home'])
+         if(response.status == 'success')
+           this.router.navigate(['./home'])
     });
   }
 

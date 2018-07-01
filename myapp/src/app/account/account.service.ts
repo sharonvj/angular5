@@ -9,22 +9,18 @@ const httpOptions = {
 
 @Injectable()
 export class AccountService {
-  private signinUrl = 'http://localhost:9200/account/_search';
+ 
+
+
 
   constructor(private http: HttpClient) { }
 
   doSignin (signin) {
-    var query = {
-		"query": {
-		"bool": {
-		  "must": [
-		    { "match": { "user": signin.username } },
-		    { "match": { "password": signin.password } }
-		   ]
-		  }
-		 }
-	}
-    return this.http.post(this.signinUrl,query)
+    return this.http.post('/api/account/signin',signin)
+  }
+
+  doSignup(account){
+    return this.http.post('/api/account/signup',account)
   }
 
 }
