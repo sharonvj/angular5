@@ -22,7 +22,7 @@ export class SigninComponent implements OnInit {
   doSignin() {
     this.accountService.doSignin(this.account)
     .subscribe(response => {
-         if(response.status == 'success')
+         if(response['status'] == 'success')
            this.router.navigate(['./home'])
     });
   }
