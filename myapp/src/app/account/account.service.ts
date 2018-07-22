@@ -23,4 +23,12 @@ export class AccountService {
     return this.http.post('/api/account/signup',account)
   }
 
+  getReports() {
+     return this.http.get('/api/home/allreports')
+  }
+
+  addReport(report) {
+     return this.http.post('/api/home/newreport',report)
+  }
+
 }
