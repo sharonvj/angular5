@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
+
 const routes: Routes = [
   {
         path: '',
@@ -10,6 +12,10 @@ const routes: Routes = [
   {
         path: 'account',
         loadChildren: './account/account.module'
+  },
+  {
+        path: 'hrm',
+        loadChildren: './hrm/hrm.module'
   }
 ];
 
@@ -18,6 +24,6 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
   ],
   declarations: [],
-  exports:[RouterModule]
+  exports:[RouterModule],
 })
 export class AppRouting { }

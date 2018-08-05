@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { AppBootstrapModule } from './app-bootstrap/app-bootstrap.module';
 import { AppRouting } from './app.routing';
 import { AccountModule } from './account/account.module';
+import { HrmModule } from './hrm/hrm.module';
 import { HttpClientModule }    from '@angular/common/http';
 
 
@@ -13,11 +14,12 @@ import { HttpClientModule }    from '@angular/common/http';
     BrowserModule,
     AppBootstrapModule,
     AccountModule,
+    HrmModule,
     AppRouting,
   ],
   providers: [],
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   bootstrap: [AppComponent]
 })

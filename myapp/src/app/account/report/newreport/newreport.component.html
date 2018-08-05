@@ -1,0 +1,28 @@
+
+<div class="jumbotron" style="margin-top: 20px;">
+   <h1>New Report</h1>
+   <div class="row">
+      <div class="col-12">
+         <form class="form-inline" (ngSubmit)="addReport()">
+            <label for="r_name" class="mr-sm-2">Report Name:</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="r_name" autocomplete="off" 
+            [(ngModel)]="report.reportname" name="r_name">
+            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+         </form>
+      </div>
+   </div>
+</div>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Report Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of reportList">
+        <td [innerHtml]="e.id"></td>
+        <td [innerHtml]="e.name"></td>
+      </tr>
+    </tbody>
+  </table>
